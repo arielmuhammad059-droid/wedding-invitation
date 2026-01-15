@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan Pernikahan</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family: Georgia, serif;
+  background:#7b1e1e;
+  color:#fff8dc;
+}
+.hidden{display:none}
+
+/* MUSIC */
+.music-btn{
+  position:fixed;top:12px;right:12px;
+  background:gold;color:#7b1e1e;
+  border:none;width:44px;height:44px;
+  border-radius:50%;font-size:18px;z-index:999;
+}
+
+/* COVER */
+.cover{
+  height:100vh;
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+  url('bg-palembang.jpg') center/cover;
+  display:flex;align-items:center;justify-content:center;
+}
+.cover-box{
+  background:rgba(0,0,0,.65);
+  border:2px solid gold;
+  padding:25px;border-radius:16px;
+  text-align:center;width:90%;max-width:350px;
+}
+.cover h1{color:gold;font-size:28px}
+.cover button{
+  margin-top:18px;padding:12px 24px;
+  border:none;background:gold;color:#7b1e1e;
+  border-radius:25px;font-size:16px;
+}
+
+/* CONTENT */
+.undangan{
+  padding:40px 16px;text-align:center;
+  background:url('c:\Users\ThinkPad\Downloads\AZ00000039.jpg') repeat;
+}
+.nama{font-size:30px;color:gold}
+.card{
+  background:rgba(0,0,0,.65);
+  border:1px solid gold;
+  padding:18px;margin:14px auto;
+  max-width:330px;border-radius:14px;
+}
+iframe{
+  width:100%;height:200px;border:none;border-radius:12px;
+}
+
+/* COUNTDOWN */
+.countdown{
+  display:flex;justify-content:center;
+  gap:8px;margin:20px 0;
+}
+.countdown div{
+  background:rgba(0,0,0,.6);
+  padding:10px;border-radius:12px;width:70px;
+}
+.countdown span{display:block;font-size:20px;color:gold}
+
+/* GALERI */
+.galeri{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:10px;margin:20px 0;
+}
+.galeri img{
+  width:100%;border-radius:12px;
+  animation:fadeUp 1s ease;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* AMPL0P */
+.amplop{
+  background:rgba(0,0,0,.7);
+  border:1px solid gold;
+  border-radius:16px;
+  padding:20px;
+  max-width:330px;
+  margin:20px auto;
+}
+.amplop h3{color:gold;margin-bottom:10px}
+.rek{
+  background:#000;
+  padding:12px;
+  border-radius:10px;
+  margin:10px 0;
+  font-size:14px;
+}
+.copy-btn{
+  background:gold;color:#7b1e1e;
+  border:none;padding:8px 16px;
+  border-radius:20px;
+  margin-top:8px;
+}
+
+/* FOOTER */
+footer{margin:30px 0;font-size:14px}
+</style>
+</head>
+
+<body>  
+<audio id="backsound" loop>
+  <source src="c:\Users\ThinkPad\Downloads\undangan.html\foto wedding\WhatsApp Video 2026-01-15 at 21.19.06.mp4" type="audio/mpeg">
+</audio>
+<button class="music-btn" onclick="toggleMusic()">⏸</button>
+
+<!-- COVER -->
+<section class="cover" id="cover">
+  <div class="cover-box">
+    <p>The Wedding Of</p>
+    <h1>Refi & Yadi</h1>
+    <p>Kepada Yth:</p>
+    <b id="namaTamu">Tamu Undangan</b><br><br>
+    <button onclick="bukaUndangan()">BUKA UNDANGAN</button>
+  </div>
+</section>
+
+<!-- UNDANGAN -->
+<section class="undangan hidden" id="undangan">
+
+<p><strong>Refi Ariska</strong><br>
+    Putri Pertama dari Bapak Zakaria (Alm) & Ibu Netty<br>
+    <h2>&</h2>
+     <strong>Asri Yadi Saputra</strong><br>
+      Putra Pertama dari Bapak Abu Kasim & Ibu Maisaroh <br><br>
+</p>
+<p> 📅 Minggu, 05 April 2026</p>
+    🕰 08.00 WIB - Selesai</p>
+    🏠 Rumah Mempelai Wanita</p>
+    📍 Jl. KH. Wahid Hasyim Lrg. Sekolah Pasar PT. Ali 1 Ulu Palembang</p>
+
+<div class="countdown">
+  <div><span id="hari">0</span>Hari</div>
+  <div><span id="jam">0</span>Jam</div>
+  <div><span id="menit">0</span>Menit</div>
+  <div><span id="detik">0</span>Detik</div>
+</div>
+
+<div class="card">
+  <h2>Akad Nikah & Resepsi</h2>
+  <p>08.00 WIB - Selesai</p>
+</div>
+
+<div class="card">
+  <h2>Lokasi Acara</h2>
+  <iframe src="https://www.google.com/maps?q=Palembang&output=embed"></iframe>
+</div>
+
+<h3>Galeri Foto</h3>
+<div class="galeri">
+  <img src="c:\Users\ThinkPad\Downloads\AZ00000025.jpg">
+  <img src="c:\Users\ThinkPad\Downloads\AZ00000070.jpg">
+  <img src="c:\Users\ThinkPad\Downloads\AZ00000059.jpg">
+  <img src="c:\Users\ThinkPad\Downloads\AZ00000096.jpg">
+</div>
+
+<!-- AMPL0P DIGITAL -->
+<div class="amplop">
+  <h3>Amplop Digital</h3>
+  <p>Doa restu Anda merupakan karunia terindah bagi kami.</p>
+
+  <div class="rek" id="rek1">
+    BCA<br>
+    1510773736<br>
+    a.n Asri Yadi Saputra<br><br>
+    DANA<br>
+    0821 7680 7550<br>
+    a.n Asri Yadi Saputra
+  </div>
+  <button class="copy-btn" onclick="copyRek('rek1')">Salin Rekening</button>
+
+</div>
+
+<footer>
+  <h2><p>Terima Kasih atas Doa & Restunya</p></h2>
+</footer>
+
+</section>
+
+<script>
+const audio=document.getElementById("backsound");
+let playing=false;
+
+function bukaUndangan(){
+  document.getElementById("cover").style.display="none";
+  document.getElementById("undangan").classList.remove("hidden");
+  audio.play();playing=true;
+}
+function toggleMusic(){
+  playing?audio.pause():audio.play();
+  playing=!playing;
+}
+
+/* Nama tamu */
+const params=new URLSearchParams(window.location.search);
+const nama=params.get("to");
+if(nama) document.getElementById("namaTamu").innerText=nama;
+
+/* Countdown */
+const target=new Date("2026-04-05T08:00:00").getTime();
+setInterval(()=>{
+  const now=new Date().getTime();
+  const sisa=target-now;
+  if(sisa>0){
+    hari.innerText=Math.floor(sisa/86400000);
+    jam.innerText=Math.floor((sisa/3600000)%24);
+    menit.innerText=Math.floor((sisa/60000)%60);
+    detik.innerText=Math.floor((sisa/1000)%60);
+  }
+},1000);
+
+/* Copy rekening */
+function copyRek(id){
+  const text=document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text);
+  alert("Nomor rekening disalin");
+}
+</script>
+
+</body>
+</html>
